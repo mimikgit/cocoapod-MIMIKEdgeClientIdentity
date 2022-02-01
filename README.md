@@ -77,4 +77,4 @@ https://github.com/mimikgit/cocoapod-MIMIKEdgeClientIdentity
 
 ## License
 
-Edge is available under the MIT license. See the LICENSE file for more info.
+The aforementioned mimik client and service libraries are available under the MIT license. See the LICENSE file for more information.
