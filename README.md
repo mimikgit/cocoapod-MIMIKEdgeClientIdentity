@@ -5,7 +5,7 @@
  * `Identity`
  * `Authentication`
 
- using the following APIs:
+ using these API functions:
 
  * `authorizeWithDeveloperIdToken`
  * `authorizeWithFederation`
@@ -17,7 +17,7 @@
  * `accountInformation`
  * `supportedAuthenticationScopes`
 
- Please see the in-code documenation in Xcode for more details about each API.
+ Please see the in-code documentation in Xcode for more details.
 
 ## Requirements
 ```
