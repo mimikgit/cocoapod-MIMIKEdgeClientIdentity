@@ -189,6 +189,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import Foundation;
+@import MIMIKEdgeClient;
 @import ObjectiveC;
 #endif
 
@@ -275,6 +276,25 @@ SWIFT_CLASS("_TtC23MIMIKEdgeClientIdentity15MIMIKAuthTokens")
 
 
 
+
+@class MIMIKAuthorization;
+
+@interface MIMIKEdgeClient (SWIFT_EXTENSION(MIMIKEdgeClientIdentity))
+/// Authorizes the mimik client and service libraries for the mimik backend microservice API calls. It is the application developer’s responsibility to call one of the authorizaton functions after each client library initialization.
+/// warning:
+/// Client library only persists the user access token in active memory. It is the application developer’s responsibility to authorize the client library for each initialization and store the user access token according to the project needs.
+/// \param authorization User access token to be used by the client and service libraries for backend microservice API calls.
+///
+- (MIMIKAuthorization * _Nullable)authenticateWithAuthorizationWithAuthorization:(MIMIKAuthorization * _Nonnull)authorization SWIFT_WARN_UNUSED_RESULT;
+- (MIMIKAuthorization * _Nullable)authorizeWithAuthorization:(MIMIKAuthorization * _Nonnull)authorization SWIFT_WARN_UNUSED_RESULT;
+/// Authorizes the mimik client and service libraries for the mimik backend microservice API calls. It is the application developer’s responsibility to call one of the authorizaton functions after each client library initialization.
+/// warning:
+/// Client library only persists the user access token in active memory. It is the application developer’s responsibility to authorize the client library for each initialization and store the user access token according to the project needs.
+/// \param token User access token to be used by the client and service libraries for backend microservice API calls.
+///
+- (MIMIKAuthorization * _Nullable)authenticateWithUserAccessTokenWithToken:(NSString * _Nonnull)token SWIFT_WARN_UNUSED_RESULT;
+- (MIMIKAuthorization * _Nullable)authorizeWithUserAccessTokenWithToken:(NSString * _Nonnull)token SWIFT_WARN_UNUSED_RESULT;
+@end
 
 
 SWIFT_CLASS("_TtC23MIMIKEdgeClientIdentity23MIMIKEdgeClientIdentity")
