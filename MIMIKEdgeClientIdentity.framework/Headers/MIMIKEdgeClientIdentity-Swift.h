@@ -234,8 +234,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 /// </ul>
 SWIFT_CLASS("_TtC23MIMIKEdgeClientIdentity18MIMIKAuthConfigApp")
 @interface MIMIKAuthConfigApp : NSObject <NSCoding>
-- (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -270,8 +270,8 @@ SWIFT_CLASS("_TtC23MIMIKEdgeClientIdentity20MIMIKAuthStateResult")
 SWIFT_CLASS("_TtC23MIMIKEdgeClientIdentity15MIMIKAuthTokens")
 @interface MIMIKAuthTokens : NSObject <NSCoding>
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
-- (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
