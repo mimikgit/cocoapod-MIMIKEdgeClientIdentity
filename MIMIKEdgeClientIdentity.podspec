@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MIMIKEdgeClientIdentity"
-  s.version      = "13.3.2"
+  s.version      = "13.3.3"
   s.summary      = "mimik identity service library"
 
   s.description  = <<-DESC
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
 
   s.vendored_frameworks = "MIMIKEdgeClientIdentity.framework"
 
-  s.dependency 'MIMIKEdgeClient', '~> 13.3.2'
+  s.dependency 'MIMIKEdgeClient', '~> 13.3.3'
   s.dependency 'AppAuth', '~> 1.5.0'
   s.dependency 'Alamofire', '~> 5.6.1'
   s.dependency 'SwiftyJSON', '~> 5.0.1'
