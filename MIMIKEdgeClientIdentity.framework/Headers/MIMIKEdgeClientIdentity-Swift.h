@@ -195,8 +195,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import Foundation;
-@import MIMIKEdgeClient;
 @import ObjectiveC;
 #endif
 
@@ -215,66 +213,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-@class NSCoder;
-
-/// Application authorization request configuration object.
-/// <ul>
-///   <li>
-///     clientId: Client application identifier. Generated for the developer at the developer portal during application registration.
-///   </li>
-///   <li>
-///     redirectUrl: Client application redirect URL. Specified by the developer at the developer portal during application registration.
-///   </li>
-///   <li>
-///     additionalScopes: Optional additional scopes for the authorization request. A default set is included automatically.
-///   </li>
-///   <li>
-///     authorizationRootUrl: Application authorization server URL.
-///   </li>
-/// </ul>
-SWIFT_CLASS("_TtC23MIMIKEdgeClientIdentity18MIMIKAuthConfigApp")
-@interface MIMIKAuthConfigApp : NSObject <NSCoding>
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder;
-- (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-SWIFT_CLASS("_TtC23MIMIKEdgeClientIdentity20MIMIKAuthStateResult")
-@interface MIMIKAuthStateResult : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class NSString;
-
-/// Authentication status object used for EdgeAppOpsProtocol delegate callbacks. Essentially it provides information about the current edgeSDK lifecycle state and the reason behind the lifecycle state change.
-/// <ul>
-///   <li>
-///     accessToken: JWT edgeSDK authorization token which lets registered developer use local edgeSDK services. Used for mcm operations, micro services calls drive, esentially all direct to edgeSDK calls, account association. Used as a Bearer in the Authorization header.
-///   </li>
-///   <li>
-///     idToken: JWT account identifying token used for getting more information about the authenticated account (such as sub - account id).
-///   </li>
-///   <li>
-///     refreshToken: Currently not implemented.
-///   </li>
-///   <li>
-///     accessTokenExpirationDate: Access token expiration date.
-///   </li>
-///   <li>
-///     interactiveSessionTicket:.
-///   </li>
-/// </ul>
-SWIFT_CLASS("_TtC23MIMIKEdgeClientIdentity15MIMIKAuthTokens")
-@interface MIMIKAuthTokens : NSObject <NSCoding>
-@property (nonatomic, readonly, copy) NSString * _Nonnull description;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder;
-- (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
 
 
 
@@ -283,23 +221,6 @@ SWIFT_CLASS("_TtC23MIMIKEdgeClientIdentity15MIMIKAuthTokens")
 
 
 
-
-@class MIMIKAuthorization;
-
-@interface MIMIKEdgeClient (SWIFT_EXTENSION(MIMIKEdgeClientIdentity))
-/// Authorizes the mimik client and service libraries for the mimik backend microservice API calls. It is the application developer’s responsibility to call one of the authorizaton functions after each client library initialization.
-/// warning:
-/// Client library only persists the user access token in active memory. It is the application developer’s responsibility to authorize the client library for each initialization and store the user access token according to the project needs.
-/// \param authorization User access token to be used by the client and service libraries for backend microservice API calls.
-///
-- (MIMIKAuthorization * _Nullable)authenticateWithAuthorizationWithAuthorization:(MIMIKAuthorization * _Nonnull)authorization SWIFT_WARN_UNUSED_RESULT;
-/// Authorizes the mimik client and service libraries for the mimik backend microservice API calls. It is the application developer’s responsibility to call one of the authorizaton functions after each client library initialization.
-/// warning:
-/// Client library only persists the user access token in active memory. It is the application developer’s responsibility to authorize the client library for each initialization and store the user access token according to the project needs.
-/// \param token User access token to be used by the client and service libraries for backend microservice API calls.
-///
-- (MIMIKAuthorization * _Nullable)authenticateWithUserAccessTokenWithToken:(NSString * _Nonnull)token SWIFT_WARN_UNUSED_RESULT;
-@end
 
 
 SWIFT_CLASS("_TtC23MIMIKEdgeClientIdentity23MIMIKEdgeClientIdentity")
